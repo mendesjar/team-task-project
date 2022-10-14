@@ -10,13 +10,15 @@ export function TabsRoutes(){
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
-                    position: 'absolute',
-                    bottom: 25, 
-                    left: 20,
-                    right: 20,
+                    position: "absolute",
+                    height: 110,
                     elevation: 0,
-                    borderRadius: 30,
-
+                    borderRadius: 90,
+                },
+                tabBarIcon: ({}) => {
+                    const icons = {
+                        Home: PlusCircle,
+                    }
                 }
             }}
         >
