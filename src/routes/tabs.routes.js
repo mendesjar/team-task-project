@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeView }  from "../screens/Home/homeView";
+import { AntDesign } from '@expo/vector-icons'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -13,12 +14,8 @@ export function TabsRoutes(){
                     position: "absolute",
                     height: 110,
                     elevation: 0,
+                    bottom: -38,
                     borderRadius: 90,
-                },
-                tabBarIcon: ({}) => {
-                    const icons = {
-                        Home: PlusCircle,
-                    }
                 }
             }}
         >
@@ -26,6 +23,11 @@ export function TabsRoutes(){
                 name="Home" 
                 component={HomeView}
                 options={{
+                    tabBarIcon: () => {
+                        return(
+                            <AntDesign name="pluscircle" size={48} color="#6146C6" />
+                        )
+                    },
                     tabBarLabel: 'Home',
                 }}
             />
