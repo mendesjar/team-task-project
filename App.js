@@ -14,7 +14,7 @@ export default function App() {
     return (
       <SafeAreaView style={styles.container}>
         <Routes/>
-        <StatusBar style="auto" />
+        <StatusBar barStyle="light-content" style="auto" />
       </SafeAreaView>
     );
 }
