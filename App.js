@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, StatusBar} from 'react-native';
 import { Routes } from './src/routes'
 
-const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64 
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 20 : 35 
 
 export default function App() {
     return (
