@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
+
 import { MaterialIcons } from "@expo/vector-icons";
-import { format } from 'date-fns';
+
+import { format } from "date-fns";
+import { CardMain } from "../../screens/CardMain/cardMainComponent";
 
 export function Header() {
   const [dateStatus, setDateStatus] = useState(new Date());
@@ -9,8 +12,19 @@ export function Header() {
   return (
     <View style={styles.container}>
       <View style={styles.navBar}>
-        <Text>{format(dateStatus, "LLL dd, yyyy")}</Text>
-        <MaterialIcons name="date-range" size={30} color="black" />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <Text>{format(dateStatus, "LLL dd, yyyy")}</Text>
+          <MaterialIcons name="date-range" style={styles.icons} />
+        </View>
+        <MaterialIcons name="menu" style={styles.icons} />
+      </View>
+      <View style={styles.cardsMenu}>
+        <CardMain />
       </View>
     </View>
   );
@@ -24,10 +38,20 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 48,
   },
   navBar: {
-    backgroundColor: "red",
-    padding:15,
+    padding: 20,
     height: 75,
-    flexDirection: 'row',
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
+  },
+  icons: {
+    fontSize: 25,
+    color: "#06112D",
+    marginLeft: 10,
+  },
+  cardsMenu: {
+    backgroundColor:'red',
+    padding: 20,
+    height: 275,
   },
 });
