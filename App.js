@@ -8,7 +8,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <Routes/>
-        <StatusBar barStyle="light-content" style="auto" />
+        <StatusBar style={styles.container} barStyle="light-content" />
       </View>
     );
 }
@@ -16,7 +16,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F6FB',
-    paddingTop: statusBarHeight
+    backgroundColor: '#F5F6FB'
   },
 });

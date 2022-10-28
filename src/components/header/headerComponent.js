@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, StatusBar } from "react-native";
 
 import { MaterialIcons } from "@expo/vector-icons";
 
 import { format } from "date-fns";
 import { CardMain } from "../../screens/CardMain/cardMainComponent";
+
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 20 : 35 
 
 export function Header() {
   const [dateStatus, setDateStatus] = useState(new Date());
@@ -32,13 +34,15 @@ export function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFEAA",
-    height: 350,
+    backgroundColor: "white",
+    paddingTop: statusBarHeight,
+    height: 400,
     borderBottomEndRadius: 48,
     borderBottomLeftRadius: 48,
   },
   navBar: {
-    padding: 20,
+    paddingLeft: 35,
+    paddingRight: 35,
     height: 75,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -50,7 +54,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   cardsMenu: {
-    backgroundColor:'red',
     padding: 20,
     height: 275,
   },

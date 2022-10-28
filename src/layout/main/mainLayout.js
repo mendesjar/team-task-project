@@ -1,27 +1,34 @@
-import {StyleSheet, View, Text } from 'react-native';
-import { useFonts } from 'expo-font'
+import { StyleSheet, View, Text } from "react-native";
+import {
+  useFonts,
+  Quicksand_300Light,
+  Quicksand_400Regular,
+  Quicksand_500Medium,
+  Quicksand_600SemiBold,
+  Quicksand_700Bold,
+} from "@expo-google-fonts/quicksand";
+import AppLoading from "expo-app-loading";
 
 export function MainLayout({ children }) {
-
-  const [loaded] = useFonts({
-    QuicksandRegular: require('../../../assets/fonts/static/Quicksand-Regular.ttf'),
-    QuicksandSemiBold: require('../../../assets/fonts/static/Quicksand-SemiBold.ttf'),
-    QuicksandLight: require('../../../assets/fonts/static/Quicksand-Light.ttf'),
-    QuicksandMedium: require('../../../assets/fonts/static/Quicksand-Medium.ttf'),
-    QuicksandBold: require('../../../assets/fonts/static/Quicksand-Bold.ttf'),
+  let [fontsLoaded] = useFonts({
+    Quicksand_300Light,
+    Quicksand_400Regular,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold,
+    Quicksand_700Bold,
   });
 
-  return (
-    <View style={styles.layout}>
-      {children}
-    </View>
-  );
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return <View style={styles.layout}>{children}</View>;
+  }
 }
 
 const styles = StyleSheet.create({
   layout: {
-    backgroundColor: 'tranparent',
-    fontFamily:'QuicksandRegular',
-    color: '#06112D',
+    backgroundColor: "tranparent",
+    fontFamily: "Quicksand_500Medium !important",
+    color: "#06112D",
   },
 });
