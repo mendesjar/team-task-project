@@ -7,7 +7,6 @@ import {
   Quicksand_600SemiBold,
   Quicksand_700Bold,
 } from "@expo-google-fonts/quicksand";
-import AppLoading from "expo-app-loading";
 
 export function MainLayout({ children }) {
   let [fontsLoaded] = useFonts({
@@ -19,7 +18,11 @@ export function MainLayout({ children }) {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return (
+    <View>
+      <Text>LOADING APP</Text>
+    </View>
+    );
   } else {
     return <View style={styles.layout}>{children}</View>;
   }
