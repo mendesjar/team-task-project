@@ -14,7 +14,8 @@ export function TabsRoutes(){
                     position: "absolute",
                     height: 110,
                     elevation: 0,
-                    borderRadius: 90,
+                    borderTopEndRadius: 60,
+                    borderTopStartRadius: 60,
                 }
             }}
         >
